@@ -71,7 +71,7 @@ function TodoList({todoStore}: TodoListProps) {
 */}
             <ul>
                 {todoStore.todos.map( (t) => {
-                    return <ul onClick = {() => {todoStore.toggleTodo(t.id)}} key={t.id}>
+                    return <ul onClick =  {() => {todoStore.toggleTodo(t.id)}} key={t.id}>
                                 [{t.isCompleted ? 'X' : ' '}]{t.title} 
                             </ul>
                 })}
