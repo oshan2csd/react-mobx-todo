@@ -71,11 +71,16 @@ function TodoList({todoStore}: TodoListProps) {
 */}
             <ul>
                 {todoStore.todos.map( (t) => {
-                    return <ul onClick =  {() => {todoStore.toggleTodo(t.id)}} key={t.id}>
-                                [{t.isCompleted ? 'X' : ' '}]{t.title} 
-                            </ul>
+                    return  <>
+                                <input type='Checkbox' checked={t.isCompleted} onChange= {() => {
+                                    todoStore.toggleTodo(t.id)}} key={t.id}>
+                                </input> 
+                                {t.title}
+                                <br/>
+                            </>
                 })}
             </ul>
+            
         </>
     )
 }
