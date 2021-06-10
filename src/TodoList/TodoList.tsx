@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import  React, { useState } from 'react'
+import { Card } from 'react-bootstrap';
 import TodoStore from './TodoStore';
 
 
@@ -31,15 +32,15 @@ function TodoList({todoStore}: TodoListProps) {
                         Note: This project has used, <a href='https://reactjs.org/'>React</a> and <a href='https://mobx.js.org/README.html'>MobX </a>for state management
                         <br/>
                         <br/> 
-                    </i>
-                    * Type a todo and click on submit 
-                    <br/>
-                    <br/>
-                    * When you completed an item click on that item to mark completed
-                    <br/>
-                    <br/>
-                    * Click again to mark uncompleted
+                    </i>                    
                 </p>
+                <Card>
+                    <Card.Body>
+                         Type a todo and click on submit<br/>
+                         When you completed an item click on that item to mark completed<br/>
+                         Click again to mark uncompleted
+                    </Card.Body>
+                </Card>
             </h5>
             <input 
                 type='text' 
@@ -71,13 +72,12 @@ function TodoList({todoStore}: TodoListProps) {
 */}
             <ul>
                 {todoStore.todos.map( (t) => {
-                    return  <>
+                    return <div key={t.id}>
                                 <input type='Checkbox' checked={t.isCompleted} onChange= {() => {
-                                    todoStore.toggleTodo(t.id)}} key={t.id}>
-                                </input> 
-                                {t.title}
-                                <br/>
-                            </>
+                                    todoStore.toggleTodo(t.id)}} >
+                                </input>   
+                                {t.title}    
+                            </div>
                 })}
             </ul>
             
