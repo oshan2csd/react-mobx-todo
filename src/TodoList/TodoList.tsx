@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import  React, { useState } from 'react'
-import { Button, Card, Form, FormGroup, FormLabel } from 'react-bootstrap';
+import { Button, Card, Form, FormGroup } from 'react-bootstrap';
 import TodoStore from './TodoStore';
 
 
@@ -78,7 +78,7 @@ function TodoList({todoStore}: TodoListProps) {
                                 Todozzz
                         </Card.Title>
                         <Card.Text>
-                            This project powered by <a href='https://reactjs.org/'>React</a> with <a href='https://mobx.js.org/README.html'> MobX</a> (library for state management) 
+                            This project is developed with <a href='https://reactjs.org/'>React</a> with <a href='https://mobx.js.org/README.html'> MobX</a> library (for state management) 
                         </Card.Text>
                         </Card.Body>
                     </Card>                            
