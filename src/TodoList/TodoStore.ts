@@ -1,4 +1,4 @@
-import { action, computed, makeObservable, observable } from "mobx";
+import { action, computed, makeAutoObservable, makeObservable, observable } from "mobx";
 
 
 interface TodoItem{
@@ -12,12 +12,14 @@ export default class TodoStore{
     todos: TodoItem[] = [];
 
     constructor() {
-        makeObservable(this, {
-            todos: observable,
-            addTodo:action,
-            toggleTodo:action,
-            status:computed
-        });
+        // makeObservable(this, {
+        //     todos: observable,
+        //     addTodo:action,
+        //     toggleTodo:action,
+        //     status:computed
+        // });
+
+        makeAutoObservable(this);// can write cleaner code with AutoObservable
 
     }
 
